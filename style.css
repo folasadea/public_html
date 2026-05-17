@@ -1,11 +1,11 @@
 body {
     padding: 0;
     margin: 0;
-    background: #4682B4;
+    background: #D2E5D2;
 }
 
 .navbar {
-    background: #B0C4DE;
+    background: #C70000;
 }
 
 .nav-link,
@@ -26,7 +26,9 @@ body {
     justify-content: flex-end;
 }
 
-
+.navbar-respnsive {
+    justify-content: flex-end;
+}
 
 .description {
     left: 50%;
@@ -44,4 +46,30 @@ body {
         color: #fff;
         font-size: 1.3rem;
         line-height: 1.5;
+}
+
+.mainNav {
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+    min-height: 80px;
+}
+
+.navbar-brand {
+    color: #fff !important;
+    line-height: 1.2;
+}
+
+.brand-title {
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: 3px;
+    color: #fff;
+    line-height: 1;
+}
+
+.brand-subtitle {
+    font-size: 0.75rem;
+    color: #fff;
+    letter-spacing: 2px;
+    font-style: italic;
 }

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/three@0.157.0/build/three.min.js"></script>
+</head>
+<body>
+        <section class="page-section" id="index">
+            <div class="container">
+                <div class="index" style="position: relative; display: inline-block;">
+                <img class="img-fluid" src="assets/img/logos/Mbanner.webp">
+                </div>
+            </div>
+        </section>
+
+
+    <canvas id="three-canvas"></canvas>
+
+    <script>
+        // 1. SCENE - like an empty room
+        const scene = new THREE.Scene();
+
+        // 2. CAMERA - your eyes looking into the room
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.z = 3;
+
+        // 3. RENDERER - draws everything on screen
+        const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('three-canvas') });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+
+        // 4. LIGHT - so we can see the shiny effect
+        const light = new THREE.DirectionalLight(0xffffff, 1);
+        light.position.set(1, 1, 1);
+        scene.add(light);
+
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+        scene.add(ambientLight);
+
+        // 5. OBJECT - a shiny grey sphere for now
+        const geometry = new THREE.SphereGeometry(1, 32, 32);
+        const material = new THREE.MeshStandardMaterial({
+            color: 0xC0C0C0,
+            metalness: 0.8,
+            roughness: 0.2,
+        });
+        const sphere = new THREE.Mesh(geometry, material);
+        scene.add(sphere);
+
+        // 6. ANIMATION LOOP - spins it around
+        function animate() {
+            requestAnimationFrame(animate);
+            sphere.rotation.y += 0.01;
+            renderer.render(scene, camera);
+        }
+        animate();
+    </script>
+
+
+
+</body>
+</html>
+
