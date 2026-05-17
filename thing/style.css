@@ -45,3 +45,10 @@ body {
         font-size: 1.3rem;
         line-height: 1.5;
 }
+
+.three-canvas {
+    display: block;
+    margin: 0 auto;
+    width: 600 !important;
+    height: 500px !important;
+}
