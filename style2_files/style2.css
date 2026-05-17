@@ -1,0 +1,33 @@
+#wrap {
+width:750px;
+margin:0 auto;
+background:#FFFFCC;
+}
+
+#header {
+    background:#ddd;
+    }
+    #nav {
+        #nav li {
+            float:left;
+            display:block;
+            width:90px;
+            }
+    background:#c99;
+    }
+    #main {
+    background:#9c9;
+    float:left;
+width:500px;
+height:500px;
+    }
+    #sidebar {
+    background:#c9c;
+    float:right;
+width:250px;
+    }
+    #footer {
+    background:#cc9;
+    clear:both;
+    }
+
