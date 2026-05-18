@@ -73,3 +73,24 @@ body {
     letter-spacing: 2px;
     font-style: italic;
 }
+
+.three-canvas {
+    display: block;
+    margin: 0 auto !important;
+    width: 600px !important;
+    height: 500px !important;
+}
+
+.dropdown-menu {
+    background-color: #c70000;
+    border: none;
+}
+
+.dropdown-item {
+    color: #fff;
+}
+
+.dropdown-item:hover {
+    background-color: #a00000;
+    color: #fff;
+}
