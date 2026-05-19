@@ -9,6 +9,7 @@
     <link href="style.css" rel="stylesheet">
 </head>
 
+
     <body id="page-top">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
@@ -65,12 +66,12 @@
             <button class="btn btn-dark mx-2" onclick="toggleRotate()">Rotate</button>
             <button class="btn btn-dark mx-2" onclick="walk()">Walk</button>
             <button class="btn btn-dark mx-2" onclick="stomp()">Stomp</button>
-            <button class="btn btn-dark mx-2" onclick="light()">Light</button>
-            <button class="btn btn-dark mx-2" onclick="light()">Camera</button>
+            <button class="btn btn-dark mx-2" onclick="toggleLight()">Light</button>
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/three@0.157.0/build/three.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
 
 
         <script>
@@ -85,6 +86,9 @@
         // 3. RENDERER
         const renderer = new THREE.WebGLRenderer({ canvas: canvas });
         renderer.setSize(600, 500);
+        const controls = new THREE.OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true;
+        controls.dampingFactor = 0.05;
 
         // 4. LIGHTS
         const light = new THREE.DirectionalLight(0xffffff, 1);
@@ -150,6 +154,7 @@
         let time = 0;
         function animate() {
             requestAnimationFrame(animate);
+            controls.update();
             time += 0.05;
             if (rotating && boot) boot.rotation.y += 0.01;
             if (walking && boot) boot.position.y = -2.5 + Math.sin(time) * 0.3;
@@ -157,9 +162,23 @@
             renderer.render(scene, camera);
         }
         animate();
+
+        // 9. LIGHT TOGGLE
+        let lightOn = true;
+        function toggleLight() {
+            lightOn = !lightOn;
+            if (lightOn) {
+                // Normal lighting
+                light.intensity = 1;
+                ambientLight.intensity = 0.5;
+            } else {
+                // Dim/dramatic lighting
+                light.intensity = 0.2;
+                ambientLight.intensity = 0.1;
+            }
+        }
+
         </script> 
-
-
 
             <!-- add sound -->
     </body>
