@@ -41,7 +41,6 @@
     </header>
 
 
-
     <!-- Index-->
     <section class="page-section" id="index">
         <div class="container">
@@ -51,4 +50,105 @@
                 </div>
         </div>
     </section>
+
+
+<!-- About Content -->
+    <section class="page-section">
+        <div class="container">
+
+            <h1>About page</h1>
+            <h3>Introduction</h3>
+            <p>For my website, I created a marketing website for monopoly tokens. I added a 3D model of three of the tokens with picture labels and sound effects of the sounds these objects would typically make. I chose monopoly as it’s a well known game with lots of history and recognisable pieces.</p>
+
+            <div class="mt-4"></div>
+            <h3>3D Models</h3>
+            <p>For this website, I created a 3D model of a boot, cat and ship in blender. I used features like extrude, shade smooth, subdivision surface and bevel. I formatted the exports in .glb as it works the best with three.js, sometimes referred to as “the JPEG of 3D”.</p>
+
+            <div class="mt-4"></div>
+            <h3>Usability testing</h3>
+            <p>I structured the page so that every page has the Monopoly logo, nav bar, monopoly man and the same colour scheme. The navbar has home, tokens (which drops down for the three tokens: boot, cat and ship), and the about page. As the actual monopoly tokens are silver (all the same colour), I decided to make the website itself more colourful to go with the theme and to make it more complex and aesthetically pleasing. I set up the three.js scene using javascript within the individual html files, namely lights, camera and rendering.</p>
+
+            <div class="mt-4"></div>
+            <h3>Integration</h3>
+            <p>I loaded the .glb files into three.js by using TGLFLoader which is a three.js plug-in designed for .glb files. The pages linked together as each token has their own html file and they all come under the tokens dropdown in the navigation bar. Also, if you click on one of the token images it will take you to said html page. All of the pages have the same css so the design is the same. The CSS and js work together as css controls the UI - so whatever the user sees in terms of colours, button shapes, etc. whereas js handles the functionality e.g. if you click a button, an object moves.</p>
+
+            <div class="mt-4"></div>
+            <h3>Functional testing</h3>
+            <p>Each button has a different animation e.g. toggle wireframe strips the model of the solid part and only shows the wireframe, Js was used for buttons, rotate makes the model spin in an anti-clockwise direction on the y-axis, stomp/meow/skim makes the model move up and down fast as if it’s stomping compared to walk/swim being slow using a sine wave, the light gets dimmer and brighter and orbitControls lets you drag and move the object in whichever angle you want and scroll to zoom. There is one sound effect for every token: the boot makes a stomp noise when it stomps, the cat runs making a meow noise when you click meow and the ship makes a fast noise when you skim. </p>
+
+            <div class="mt-4"></div>
+            <h3>Implementation</h3>
+            <p>YOUR IMPLEMENTATION TEXT HERE</p>
+
+            <div class="mt-4"></div>
+            <h3>Deeper Understanding</h3>
+            <p>YOUR DEEPER UNDERSTANDING TEXT HERE</p>
+
+            <div class="mt-4"></div>
+            <h3>Screenshots</h3>
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-6">
+                        <img src="assets/img/about/screenshot1.jpg" alt="Screenshot 1" class="img-fluid" id="image1">
+                    </div>
+                    <div class="col-6">
+                        <img src="assets/img/about/screenshot2.jpg" alt="Screenshot 2" class="img-fluid" id="image2">
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-4"></div>
+            <h2>Generative AI Usage Record</h2>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Use Case</th>
+                        <th>Tool</th>
+                        <th>Outcome</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Help structuring Three.js code</td>
+                        <td>Claude (Anthropic)</td>
+                        <td>Used to help set up GLTFLoader, OrbitControls and button functions for 3D model interaction</td>
+                    </tr>
+                    <tr>
+                        <td>CSS styling and debugging</td>
+                        <td>Claude (Anthropic)</td>
+                        <td>Helped fix navbar dropdown, centre canvas and resolve Bootstrap conflicts</td>
+                    </tr>
+                    <tr>
+                        <td>ADD MORE ROWS AS NEEDED</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </section>
+
+    <!-- Footer-->
+    <footer class="footer py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-4 text-lg-start">&copy; 2026 Web 3D Applications</div>
+                <div class="col-lg-4 text-lg-end">
+                    <a href="https://github.com/folasadea/web3dapp">GitHub Repo</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Image click to zoom -->
+    <script>
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('click', function() {
+                this.classList.toggle('clicked');
+            });
+        });
+    </script>
+
 </body>
+</html>
