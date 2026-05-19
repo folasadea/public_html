@@ -56,7 +56,12 @@
                 <img class="img-fluid" src="assets/img/logos/Mbanner.webp">
                 </div>
             </div>
+            <div class="container text-center my-4">
+                <h2 style="color: #000;">Boot!</h2>
+                <h4 style="color: #000;">Let's walk</h4>
+            </div>
         </section>
+
 
 
         <canvas class="three-canvas"></canvas>
@@ -102,8 +107,9 @@
         camera.add(listener);
         const sound = new THREE.Audio(listener);
         const audioLoader = new THREE.AudioLoader();
-        audioLoader.load('sounds/stomp.mp3', function(buffer) {
+        audioLoader.load('sounds/stomp.wav', function(buffer) {
             sound.setBuffer(buffer);
+            sound.setLoop(true);
         });
 
         // 6. LOAD BOOT MODEL
@@ -113,6 +119,7 @@
             boot = gltf.scene;
             boot.scale.set(1.5,1.5,1.5);
             boot.position.set(0,-2.5,0);
+            boot.rotation.y = Math.PI/2;
             scene.add(boot);
         });
 
@@ -179,8 +186,6 @@
         }
 
         </script> 
-
-            <!-- add sound -->
     </body>
 </html>
 
